@@ -10,8 +10,16 @@ script = ExtResource("1_n0j53")
 [node name="PlayerKale" parent="." unique_id=1762882717 instance=ExtResource("1_nutp4")]
 position = Vector2(415, 591)
 
+[node name="PlayerOnKule" parent="." unique_id=1778748839 instance=ExtResource("1_nutp4")]
+position = Vector2(470, 581)
+scale = Vector2(0.25674447, 0.7182618)
+
 [node name="BotKale" parent="." unique_id=632495063 instance=ExtResource("1_nutp4")]
 position = Vector2(1367, 594)
+
+[node name="BotOnKule" parent="." unique_id=1246019218 instance=ExtResource("1_nutp4")]
+position = Vector2(836, 581)
+scale = Vector2(0.25006497, 0.71480167)
 
 [node name="PlayerCannon" parent="." unique_id=800458036 instance=ExtResource("2_n0j53")]
 position = Vector2(228, 545)
