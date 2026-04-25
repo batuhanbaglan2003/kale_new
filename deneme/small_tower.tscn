@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ccbwk2d3vv3oa"]
+
+[ext_resource type="Script" uid="uid://v3isjofft67e" path="res://small_tower.gd" id="1_32a7g"]
+[ext_resource type="Texture2D" uid="uid://6vuhfwvhluca" path="res://kule1/download.jpg" id="2_j8234"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioaup"]
+size = Vector2(64.375, 172.875)
+
+[node name="SmallTower" type="StaticBody2D" unique_id=5771517]
+script = ExtResource("1_32a7g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1650741858]
+scale = Vector2(0.9, 0.86444443)
+texture = ExtResource("2_j8234")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1837950215]
+shape = SubResource("RectangleShape2D_ioaup")
