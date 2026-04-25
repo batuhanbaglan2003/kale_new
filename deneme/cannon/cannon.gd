@@ -4,10 +4,9 @@ extends Node2D
 @export_enum("Left", "Right") var side: String = "Left"
 
 var launch_power = 2.5 
-var is_active = false # KİLİT SİSTEMİ (Sıra kontrolü)
+var is_active = false 
 
 func _process(_delta):
-	# Sıra bizde değilse VEYA bu bot topuysa fareyi takip etme!
 	if not is_active or side == "Right": 
 		return
 
@@ -16,14 +15,11 @@ func _process(_delta):
 	rotation = clamp(target_angle, deg_to_rad(-90), deg_to_rad(0))
 
 func _input(event):
-	# Kilitliyse farenin tıklamasını yoksay
 	if not is_active or side == "Right":
 		return
-
 	if event is InputEventMouseButton and event.pressed:
 		launch(get_global_mouse_position())
 
-# Sağdaki botun kendi kendine hedef alıp ateşlemesi için özel fonksiyon
 func bot_fire(hedef_pozisyon):
 	var target_angle = (hedef_pozisyon - global_position).angle()
 	rotation = clamp(target_angle, deg_to_rad(-180), deg_to_rad(-90))
@@ -38,10 +34,10 @@ func launch(target_pos):
 	var distance = global_position.distance_to(target_pos)
 	projectile.speed = direction * distance * launch_power
 	
-	# HAKEMİN MERMİYİ TAKİP EDEBİLMESİ İÇİN MERMİYE ETİKET TAKIYORUZ
-	projectile.add_to_group("mermiler") 
+	# İŞTE KRİTİK NOKTA BURASI! Top, mermiye kimliğini veriyor:
+	projectile.atici_taraf = self.side 
 	
+	projectile.add_to_group("mermiler") 
 	get_tree().root.add_child(projectile)
 	
-	# Ateş edildikten sonra kendini kilitle
 	is_active = false
