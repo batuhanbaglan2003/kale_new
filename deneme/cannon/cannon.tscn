@@ -1,11 +1,31 @@
 [gd_scene format=3 uid="uid://svcsfkrqi473"]
 
 [ext_resource type="Script" uid="uid://bi4t0w158vgdt" path="res://cannon/cannon.gd" id="1_x665q"]
+[ext_resource type="Script" uid="uid://dcw0by2capnl6" path="res://mermi_top_gülle_vs/bullet.gd" id="2_dt7f4"]
 [ext_resource type="Texture2D" uid="uid://5s0qbfh7mcn2" path="res://icon.svg" id="2_fgaqi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8x3hc"]
+radius = 26.627054
+
+[sub_resource type="PackedScene" id="PackedScene_1bbfe"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Bullet", "Area2D", "script", "Sprite2D", "Sprite2D", "position", "scale", "texture", "CollisionShape2D", "CollisionShape2D", "position", "shape"),
+"node_count": 3,
+"node_ids": PackedInt32Array(1692200080, 553618154, 24697085),
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 10, 4, 11, 5, 0),
+"variants": [ExtResource("2_dt7f4"), Vector2(7.499999, 7.6293945e-06), Vector2(0.39843756, 0.44531253), ExtResource("2_fgaqi"), Vector2(8, -3), SubResource("CircleShape2D_8x3hc")],
+"version": 3
+}
 
 [node name="Cannon" type="Node2D" unique_id=800458036]
 position = Vector2(70, 573)
 script = ExtResource("1_x665q")
+projectile_scene = SubResource("PackedScene_1bbfe")
 
 [node name="muzzle" type="Marker2D" parent="." unique_id=1171794279]
 position = Vector2(54, -45)

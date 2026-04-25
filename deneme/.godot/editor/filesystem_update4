@@ -1,2 +1,5 @@
 res://mermi_top_gülle_vs/bullet.gd
 res://cannon/cannon.tscn
+res://cannon/cannon.gd
+res://Kale/kale.gd
+res://kule1/small_tower.gd
