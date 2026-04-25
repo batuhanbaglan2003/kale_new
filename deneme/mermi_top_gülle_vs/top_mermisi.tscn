@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bdfnjtt772lpi"]
+
+[ext_resource type="Texture2D" uid="uid://5s0qbfh7mcn2" path="res://icon.svg" id="1_wguq6"]
+
+[sub_resource type="GDScript" id="GDScript_fjt30"]
+script/source = "extends Node2D
+
+ var speed = 500
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0nte7"]
+radius = 72.8011
+
+[node name="TopMermisi" type="Node2D" unique_id=842234898]
+script = SubResource("GDScript_fjt30")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1635501070]
+texture = ExtResource("1_wguq6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1391603170]
+shape = SubResource("CircleShape2D_0nte7")
