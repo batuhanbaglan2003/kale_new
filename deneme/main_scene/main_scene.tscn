@@ -1,11 +1,23 @@
 [gd_scene format=3 uid="uid://r1qltgke4jq4"]
 
+[ext_resource type="Script" uid="uid://cxy57dfyge6h" path="res://main_scene/main_scene.gd" id="1_n0j53"]
 [ext_resource type="PackedScene" uid="uid://bpn2tegemekdx" path="res://Kale/kale.tscn" id="1_nutp4"]
 [ext_resource type="PackedScene" uid="uid://svcsfkrqi473" path="res://cannon/cannon.tscn" id="2_n0j53"]
 
 [node name="MainScene" type="Node2D" unique_id=2032655932]
+script = ExtResource("1_n0j53")
 
-[node name="Kale" parent="." unique_id=1762882717 instance=ExtResource("1_nutp4")]
-position = Vector2(1176, 585)
+[node name="PlayerKale" parent="." unique_id=1762882717 instance=ExtResource("1_nutp4")]
+position = Vector2(415, 591)
 
-[node name="Cannon" parent="." unique_id=800458036 instance=ExtResource("2_n0j53")]
+[node name="BotKale" parent="." unique_id=632495063 instance=ExtResource("1_nutp4")]
+position = Vector2(1367, 594)
+
+[node name="PlayerCannon" parent="." unique_id=800458036 instance=ExtResource("2_n0j53")]
+position = Vector2(228, 545)
+scale = Vector2(0.34208995, 0.34208995)
+
+[node name="BotCannon" parent="." unique_id=247583271 instance=ExtResource("2_n0j53")]
+position = Vector2(918, 545.99994)
+rotation = -0.0083191395
+scale = Vector2(0.36151353, 0.36151353)
