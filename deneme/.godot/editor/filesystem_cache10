@@ -1,4 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
+<<<<<<< HEAD
 ::res://::1777136652
 icon.svg::CompressedTexture2D::2144370666844344797::1777120051::1777120065::1::::<><><>0<>0<>647e2b25bf27c49843e84e79412351e0<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://bişeyler/::1777123317
@@ -22,3 +23,28 @@ main_scene.tscn::PackedScene::1247876286742651593::1777124363::0::1::::<><><>0<>
 ::res://mermi_top_gülle_vs/::1777125729
 bullet.gd::GDScript::7346577061919348033::1777125729::0::1::::<>Area2D<><>0<>0<><>::
 bullet.tscn::PackedScene::7337945209078965683::1777120374::0::1::::<><><>0<>0<><>::uid://dcw0by2capnl6::::res://mermi_top_gülle_vs/bullet.gd<>uid://5s0qbfh7mcn2::::res://icon.svg
+=======
+::res://::1777126247
+icon.svg::CompressedTexture2D::2144370666844344797::1777126247::1777126256::1::::<><><>0<>0<>647e2b25bf27c49843e84e79412351e0<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://bişeyler/::1777126247
+kale.tscn::PackedScene::2825699708079636714::1777126247::0::1::::<><><>0<>0<><>::uid://dyeq1p88rvtdt::::res://Kale/kale.gd<>uid://cvav7g4ox8d10::::res://Kale/images.jpg
+node_2d.tscn::PackedScene::7649253457507560547::1777126247::0::1::::<><><>0<>0<><>::
+::res://cannon/::1777126247
+cannon.gd::GDScript::3008997852461891081::1777126247::0::1::::<>Node2D<><>0<>0<><>::
+cannon.tscn::PackedScene::1306904975454586800::1777126247::0::1::::<><><>0<>0<><>::uid://bi4t0w158vgdt::::res://cannon/cannon.gd<>uid://dcw0by2capnl6::::res://mermi_top_gülle_vs/bullet.gd<>uid://5s0qbfh7mcn2::::res://icon.svg
+new_cannon.tscn::PackedScene::8029432053759649047::1777126247::0::1::::<><><>0<>0<><>::
+::res://Kale/::1777126246
+images.jpg::CompressedTexture2D::6248139646645496593::1777120818::1777120818::1::::<><><>0<>0<>047066bbf0a6e0249d15b6218b86f790<>res://.godot/imported/images.jpg-55a992099074fc2cda2f4043b886c174.ctex::
+kale.gd::GDScript::8853070552285842269::1777126246::0::1::::<>Node2D<><>0<>0<><>::
+kale.tscn::PackedScene::3467763757515425157::1777126246::0::1::::<><><>0<>0<><>::uid://dyeq1p88rvtdt::::res://Kale/kale.gd<>uid://cvav7g4ox8d10::::res://Kale/images.jpg
+node_2d.tscn::PackedScene::7649253457507560547::1777120818::0::1::::<><><>0<>0<><>::
+::res://kule1/::1777126247
+download.jpg::CompressedTexture2D::2220433223593324412::1777120818::1777121868::1::::<><><>0<>0<>f8cfd7438fc24553592d94bc86f698df<>res://.godot/imported/download.jpg-47dcc0e79bf7a303bb5b60682529156c.ctex::
+small_tower.gd::GDScript::1532286668316829256::1777126247::0::1::::<>StaticBody2D<><>0<>0<><>::
+small_tower.tscn::PackedScene::4916638488262218116::1777120818::0::1::::<><><>0<>0<><>::uid://v3isjofft67e::::res://small_tower.gd<>uid://6vuhfwvhluca::::res://kule1/download.jpg
+::res://main_scene/::1777126247
+main_scene.tscn::PackedScene::1247876286742651593::1777126247::0::1::::<><><>0<>0<><>::uid://bpn2tegemekdx::::res://Kale/kale.tscn<>uid://svcsfkrqi473::::res://cannon/cannon.tscn
+::res://mermi_top_gülle_vs/::1777126247
+bullet.gd::GDScript::7346577061919348033::1777126247::0::1::::<>Area2D<><>0<>0<><>::
+bullet.tscn::PackedScene::7337945209078965683::1777126247::0::1::::<><><>0<>0<><>::uid://dcw0by2capnl6::::res://mermi_top_gülle_vs/bullet.gd<>uid://5s0qbfh7mcn2::::res://icon.svg
+>>>>>>> 0d855c7a0e7e4fb8f4108936c4f74f71a21ef051
