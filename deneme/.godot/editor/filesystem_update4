@@ -1,3 +1,5 @@
 res://cannon/cannon.gd
 res://mermi_top_gülle_vs/bullet.gd
 res://main_scene/main_scene.tscn
+res://cannon/cannon.tscn
+res://main_scene/main_scene.gd

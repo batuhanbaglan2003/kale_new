@@ -1,7 +1,7 @@
 extends Area2D
 
 var speed = Vector2.ZERO
-var gravity_force = 1800
+var gravity_force = 600
 var atici_taraf = "" 
 
 func _ready():

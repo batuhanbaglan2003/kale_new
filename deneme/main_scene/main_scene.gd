@@ -2,17 +2,31 @@ extends Node2D
 
 @onready var player_cannon = $PlayerCannon
 @onready var bot_cannon = $BotCannon
-@onready var player_kale = $PlayerKale # Senin kalen
-@onready var bot_kale = $BotKale     # Botun kalesi
+@onready var player_kale = $PlayerKale
+@onready var bot_kale = $BotKale
+@onready var player_on_kule = $PlayerOnKule
+@onready var bot_on_kule = $BotOnKule
+@onready var result_label = $UI/ResultLabel
 
 var sira = "PLAYER" 
+var oyun_bitti = false
+
+# YAPAY ZEKA HAFIZASI
+var bot_hedef_ismi = ""
+var bot_hata_carpan = 1.0 # 1.0 = %100 Hata, 0.0 = Kusursuz İsabet
 
 func _ready():
 	player_cannon.is_active = true
 	bot_cannon.is_active = false
 	bot_cannon.side = "Right"
+	if result_label != null: result_label.hide()
 
 func _process(_delta):
+	if oyun_bitti: return
+
+	if not is_instance_valid(bot_kale): oyunu_sonlandir("KAZANDINIZ!") ; return
+	if not is_instance_valid(player_kale): oyunu_sonlandir("KAYBETTİNİZ...") ; return
+
 	var mermiler = get_tree().get_nodes_in_group("mermiler")
 	var mermi_sayisi = mermiler.size()
 	
@@ -33,34 +47,45 @@ func _process(_delta):
 				sira = "PLAYER"
 				player_cannon.is_active = true
 
+func oyunu_sonlandir(mesaj):
+	oyun_bitti = true
+	if result_label != null:
+		result_label.text = mesaj
+		result_label.show()
+	player_cannon.is_active = false
+	bot_cannon.is_active = false
+	print("Oyun Bitti: ", mesaj)
+
 func bot_hamlesi():
+	if oyun_bitti: return
 	await get_tree().create_timer(1.0).timeout 
 	
-	# 1. Hedef kim? (Kalen duruyorsa kale, yıkıldıysa senin topun)
-	var hedef = player_kale if is_instance_valid(player_kale) else player_cannon
-	
-	# 2. X Eksenindeki mesafe (Range) ne kadar?
+	# HEDEF SEÇİMİ
+	var hedef = null
+	if is_instance_valid(player_on_kule): hedef = player_on_kule
+	elif is_instance_valid(player_kale): hedef = player_kale
+	else: hedef = player_cannon
+		
+	# YAPAY ZEKA: Hedef değiştiyse botun kafası karışsın ve baştan öğrenmeye başlasın
+	if hedef.name != bot_hedef_ismi:
+		bot_hedef_ismi = hedef.name
+		bot_hata_carpan = 1.0 # Hatayı tekrar maksimuma çıkar
+		print("Bot yeni bir hedefe odaklandı: ", hedef.name)
+
 	var mesafe_x = abs(bot_cannon.global_position.x - hedef.global_position.x)
+	var gerekli_hiz = sqrt((mesafe_x * 600.0) / 0.866)
+	var mukemmel_guc = gerekli_hiz / 10.0
 	
-	# 3. MÜHENDİSLİK FİZİĞİ: 45 derecelik açıyla hedefi vurmak için gereken hız formülü
-	# V = Karekök(Mesafe * Yerçekimi)
-	var gerekli_hiz = sqrt(mesafe_x * 1800.0) # 1800, mermindeki gravity_force değeri
+	# YAPAY ZEKA: Öğrenen Hata Payı
+	var max_sapma = 8.0 # Bot en fazla 8 güç birimi sapabilir
+	var rastgele_sapma = randf_range(-max_sapma, max_sapma) * bot_hata_carpan
 	
-	# 4. Senin topunun formülü: Hız = Fare Uzaklığı * 2.5
-	# Biz tersten gidiyoruz: Fare Uzaklığı = Hız / 2.5
-	var fare_uzakligi = gerekli_hiz / 2.5
+	var bot_gucu = mukemmel_guc + rastgele_sapma
+	bot_gucu = clamp(bot_gucu, 0.0, 100.0)
 	
-	# 5. HATA PAYI (Bot her defasında mükemmel vurmasın, biraz şaşsın)
-	# Eğer bot çok ıska geçerse bu 40 sayılarını 20'ye düşür. Çok iyi vurursa 60'a çıkar.
-	var rastgele_bozulma = randf_range(-40.0, 40.0)
-	fare_uzakligi += rastgele_bozulma
+	# YAPAY ZEKA: Bot her atışta o hedefe daha çok alışır (Hata payı her atışta %30 azalır)
+	# Yani 1. atışta çok sapar, 2. atışta az sapar, 3. atışta tam isabet ettirir!
+	bot_hata_carpan = max(0.1, bot_hata_carpan - 0.3)
 	
-	# 6. Bota sahte bir "Fare Tıklaması" noktası veriyoruz (Sol üst çapraz, -45 derece)
-	# 45 derecenin sinüs ve kosinüs değeri yaklaşık 0.707'dir.
-	var sahte_x = bot_cannon.global_position.x - (fare_uzakligi * 0.707)
-	var sahte_y = bot_cannon.global_position.y - (fare_uzakligi * 0.707)
-	
-	var sahte_tiklama = Vector2(sahte_x, sahte_y)
-	
-	# Ateşle!
-	bot_cannon.bot_fire(sahte_tiklama)
+	var kavis_acisi = deg_to_rad(-120) 
+	bot_cannon.bot_fire(kavis_acisi, bot_gucu)

@@ -33,3 +33,9 @@ position = Vector2(54, -45)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1542740542]
 position = Vector2(-2, 1)
 texture = ExtResource("2_fgaqi")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1611830874]
+offset_left = 128.0
+offset_top = -143.0
+offset_right = 146.0
+offset_bottom = 8.0
