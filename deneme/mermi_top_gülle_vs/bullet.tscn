@@ -6,6 +6,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_8x3hc"]
 radius = 26.627054
 
+[sub_resource type="Curve" id="Curve_1gngh"]
+
 [node name="Bullet" type="Area2D" unique_id=1692200080]
 script = ExtResource("1_1gngh")
 
@@ -17,3 +19,13 @@ texture = ExtResource("2_6g3v2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=24697085]
 position = Vector2(8, -3)
 shape = SubResource("CircleShape2D_8x3hc")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=979078712]
+position = Vector2(-19, 13)
+amount = 50
+lifetime = 2.0
+gravity = Vector2(0, -50)
+scale_amount_min = 15.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_1gngh")
+color = Color(0.35506555, 0.44303668, 0.41267192, 1)

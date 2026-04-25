@@ -1,31 +1,45 @@
 [gd_scene format=3 uid="uid://r1qltgke4jq4"]
 
-[ext_resource type="Script" path="res://main_scene/main_scene.gd" id="1_n0j53"]
+[ext_resource type="Script" uid="uid://cxy57dfyge6h" path="res://main_scene/main_scene.gd" id="1_n0j53"]
 [ext_resource type="PackedScene" uid="uid://bpn2tegemekdx" path="res://Kale/kale.tscn" id="1_nutp4"]
 [ext_resource type="PackedScene" uid="uid://svcsfkrqi473" path="res://cannon/cannon.tscn" id="2_n0j53"]
+[ext_resource type="Script" uid="uid://clsgjfcgoivk0" path="res://main_scene/Kamera.gd" id="4_olt6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0j53"]
+size = Vector2(1249, 163.5)
 
 [node name="MainScene" type="Node2D" unique_id=2032655932]
 script = ExtResource("1_n0j53")
 
 [node name="PlayerKale" parent="." unique_id=1762882717 instance=ExtResource("1_nutp4")]
-position = Vector2(504, 644)
+position = Vector2(524, 648)
 
 [node name="PlayerOnKule" parent="." unique_id=1778748839 instance=ExtResource("1_nutp4")]
-position = Vector2(474, 638)
+position = Vector2(500, 640)
 scale = Vector2(0.25674447, 0.7182618)
 
 [node name="BotKale" parent="." unique_id=632495063 instance=ExtResource("1_nutp4")]
-position = Vector2(1263, 636)
+position = Vector2(1275, 645)
 
 [node name="BotOnKule" parent="." unique_id=1246019218 instance=ExtResource("1_nutp4")]
-position = Vector2(856, 637)
+position = Vector2(830, 637)
 scale = Vector2(0.25006497, 0.71480167)
 
 [node name="PlayerCannon" parent="." unique_id=800458036 instance=ExtResource("2_n0j53")]
-position = Vector2(47.99997, 586.99994)
+position = Vector2(45.999996, 598)
 scale = Vector2(0.34208995, 0.34208995)
 
 [node name="BotCannon" parent="." unique_id=247583271 instance=ExtResource("2_n0j53")]
-position = Vector2(1088.9999, 580)
+position = Vector2(1115, 597.99994)
 rotation = -0.0083191395
 scale = Vector2(0.36151353, 0.36151353)
+
+[node name="zemin" type="StaticBody2D" parent="." unique_id=305522936]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zemin" unique_id=1523507254]
+position = Vector2(624.5, 705.75)
+shape = SubResource("RectangleShape2D_n0j53")
+
+[node name="Kamera" type="Camera2D" parent="." unique_id=169079509]
+position = Vector2(575, 326)
+script = ExtResource("4_olt6v")
