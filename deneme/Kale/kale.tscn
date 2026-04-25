@@ -15,7 +15,7 @@ size = Vector2(151.5, 169)
 [node name="Kale" type="Node2D" unique_id=1762882717]
 script = ExtResource("1_guedo")
 
-[node name="TopPart" type="StaticBody2D" parent="." unique_id=1152891698]
+[node name="TopPart" type="Area2D" parent="." unique_id=1067905071]
 
 [node name="Sprite2D" type="Sprite2D" parent="TopPart" unique_id=1565901108]
 position = Vector2(-316.00003, -82)
@@ -26,7 +26,7 @@ texture = ExtResource("2_b1vsw")
 position = Vector2(-315.5, -82.5)
 shape = SubResource("RectangleShape2D_vj1wg")
 
-[node name="MidPart" type="StaticBody2D" parent="." unique_id=1952254988]
+[node name="MidPart" type="Area2D" parent="." unique_id=1579663374]
 
 [node name="Sprite2D" type="Sprite2D" parent="MidPart" unique_id=1921315247]
 position = Vector2(-312, -94.00001)
@@ -37,7 +37,7 @@ texture = ExtResource("2_b1vsw")
 position = Vector2(-312.25, -93.5)
 shape = SubResource("RectangleShape2D_qxoy0")
 
-[node name="BottomPart" type="StaticBody2D" parent="." unique_id=943631495]
+[node name="BottomPart" type="Area2D" parent="." unique_id=671107349]
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomPart" unique_id=1419648457]
 position = Vector2(-309.9375, -108.87501)

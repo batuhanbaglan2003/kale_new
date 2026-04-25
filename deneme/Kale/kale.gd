@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 var top_health = 1
 var mid_health = 1

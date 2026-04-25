@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://r1qltgke4jq4"]
+
+[ext_resource type="PackedScene" uid="uid://bpn2tegemekdx" path="res://Kale/kale.tscn" id="1_nutp4"]
+[ext_resource type="PackedScene" uid="uid://svcsfkrqi473" path="res://cannon/cannon.tscn" id="2_n0j53"]
+
+[node name="MainScene" type="Node2D" unique_id=2032655932]
+
+[node name="Kale" parent="." unique_id=1762882717 instance=ExtResource("1_nutp4")]
+position = Vector2(1176, 585)
+
+[node name="Cannon" parent="." unique_id=800458036 instance=ExtResource("2_n0j53")]
