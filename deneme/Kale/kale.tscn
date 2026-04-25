@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bpn2tegemekdx"]
+
+[ext_resource type="Script" uid="uid://dyeq1p88rvtdt" path="res://Kale/kale.gd" id="1_2lkki"]
+[ext_resource type="Texture2D" uid="uid://cvav7g4ox8d10" path="res://Kale/images.jpg" id="2_6pcgb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj1wg"]
+size = Vector2(101, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxoy0"]
+size = Vector2(132.5, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ddpo"]
+size = Vector2(151.5, 169)
+
+[node name="Kale" type="Node2D" unique_id=1762882717]
+script = ExtResource("1_2lkki")
+
+[node name="TopPart" type="StaticBody2D" parent="." unique_id=1152891698]
+
+[node name="Sprite2D" type="Sprite2D" parent="TopPart" unique_id=1565901108]
+scale = Vector2(0.48666668, 0.45999998)
+texture = ExtResource("2_6pcgb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopPart" unique_id=520547410]
+shape = SubResource("RectangleShape2D_vj1wg")
+
+[node name="MidPart" type="StaticBody2D" parent="." unique_id=1952254988]
+
+[node name="Sprite2D" type="Sprite2D" parent="MidPart" unique_id=1921315247]
+scale = Vector2(0.6244444, 0.6155556)
+texture = ExtResource("2_6pcgb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MidPart" unique_id=2140397231]
+shape = SubResource("RectangleShape2D_qxoy0")
+
+[node name="BottomPart" type="StaticBody2D" parent="." unique_id=943631495]
+
+[node name="Sprite2D" type="Sprite2D" parent="BottomPart" unique_id=1419648457]
+scale = Vector2(0.7016668, 0.7655555)
+texture = ExtResource("2_6pcgb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPart" unique_id=11744663]
+shape = SubResource("RectangleShape2D_6ddpo")
