@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://svcsfkrqi473"]
 
+[ext_resource type="Script" uid="uid://bi4t0w158vgdt" path="res://cannon/cannon.gd" id="1_x665q"]
+[ext_resource type="Texture2D" uid="uid://5s0qbfh7mcn2" path="res://icon.svg" id="2_fgaqi"]
+
 [node name="Cannon" type="Node2D" unique_id=800458036]
+position = Vector2(70, 573)
+script = ExtResource("1_x665q")
+
+[node name="muzzle" type="Marker2D" parent="." unique_id=1171794279]
+position = Vector2(54, -45)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1542740542]
+position = Vector2(-2, 1)
+texture = ExtResource("2_fgaqi")
