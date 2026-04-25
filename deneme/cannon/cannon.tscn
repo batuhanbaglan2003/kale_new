@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://63l1544jr5p5"]
 
 [ext_resource type="Script" uid="uid://bi4t0w158vgdt" path="res://cannon/cannon.gd" id="1_x665q"]
@@ -22,4 +21,3 @@ gizmo_extents = 0.0
 [gd_scene format=3 uid="uid://svcsfkrqi473"]
 
 [node name="Cannon" type="Node2D" unique_id=1685215151]
->>>>>>> Stashed changes
