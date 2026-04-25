@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://63l1544jr5p5"]
+
+[ext_resource type="Script" uid="uid://bi4t0w158vgdt" path="res://cannon/cannon.gd" id="1_x665q"]
+[ext_resource type="PackedScene" uid="uid://dcss5dv68a788" path="res://mermi_top_gülle_vs/bullet.tscn" id="2_dt7f4"]
+[ext_resource type="Texture2D" uid="uid://5s0qbfh7mcn2" path="res://icon.svg" id="2_fgaqi"]
+
+[node name="Cannon" type="Node2D" unique_id=1685215151]
+position = Vector2(57, 581)
+script = ExtResource("1_x665q")
+projectile_scene = ExtResource("2_dt7f4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=267926616]
+position = Vector2(2.000001, -2)
+scale = Vector2(0.64843744, 0.6015623)
+texture = ExtResource("2_fgaqi")
+
+[node name="muzzle" type="Marker2D" parent="." unique_id=2062405869]
+position = Vector2(46, -35)
+gizmo_extents = 0.0
