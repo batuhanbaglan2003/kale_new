@@ -7,3 +7,9 @@ res://main_scene/Kamera.gd
 res://mermi_top_gülle_vs/bullet.tscn
 res://Kale/kale.gd
 res://Kale/building.gd
+res://global/global.gd
+res://main_menu/main_menu.tscn
+res://main_menu/main_menu.gd
+res://main_menu/selection_menu.tscn
+res://main_menu/selection_menu.gd
+res://main_menu/SelectionMenu.tscn

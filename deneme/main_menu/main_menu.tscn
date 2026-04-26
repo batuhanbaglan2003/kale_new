@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dxe3gqthunxg7"]
+
+[ext_resource type="Script" uid="uid://ds1q24s1y4mjc" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+
+[node name="MainMenu" type="Node2D" unique_id=954328014]
+position = Vector2(118, 57)
+script = ExtResource("1_oa53l")
+
+[node name="play" type="Button" parent="." unique_id=726795552]
+offset_left = 122.0
+offset_top = 6.0
+offset_right = 163.0
+offset_bottom = 37.0
+text = "play
+"
+
+[node name="exist" type="Button" parent="." unique_id=942258331]
+offset_left = 120.0
+offset_top = 57.0
+offset_right = 165.0
+offset_bottom = 93.67392
+rotation = -0.01707983
+text = "exist
+"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="exist" to="." method="_on_exist_pressed"]
