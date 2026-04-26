@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1777191793
+::res://::1777202545
 icon.svg::CompressedTexture2D::2144370666844344797::1777126247::1777126256::1::::<><><>0<>0<>647e2b25bf27c49843e84e79412351e0<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 GameManager.gd::GDScript::8344180623282856670::1777190139::0::1::::<>Node<><>0<>0<><>::
 ::res://bişeyler/::1777126247
@@ -11,8 +11,10 @@ cannon.tscn::PackedScene::1306904975454586800::1777200531::0::1::::<><><>0<>0<><
 new_cannon.tscn::PackedScene::8029432053759649047::1777126247::0::1::::<><><>0<>0<><>::
 ::res://global/::1777197507
 global.gd::GDScript::2737143083852878979::1777197507::0::1::::<>Node<><>0<>0<><>::
-::res://görseller/::1777201181
+::res://görseller/::1777202655
 arka.png::CompressedTexture2D::6583950174228722716::1777201181::1777201182::1::::<><><>0<>0<>be813e4b0d16be345c3ac76ecb8b33c5<>res://.godot/imported/arka.png-1763af05ecb4a3f8578e9f028db54863.ctex::
+WhatsApp Image 2026-04-26 at 14.09.36.jpeg::CompressedTexture2D::6353049747826371103::1777201831::1777201831::1::::<><><>0<>0<>60f9e428e9937624db8fee7894bcf8f1<>res://.godot/imported/WhatsApp Image 2026-04-26 at 14.09.36.jpeg-d3fb817e78e562a429a99164fba6b0a9.ctex::
+çerceve ui.png::CompressedTexture2D::487789139783445166::1777202655::1777202656::1::::<><><>0<>0<>f56118cc80c17308c0899a67b029ff74<>res://.godot/imported/çerceve ui.png-a0edce55fc73a266bccca5ca67a8df67.ctex::
 ::res://görseller/tema1/::1777188640
 1mancınıktekerlek.png::CompressedTexture2D::462117490948794660::1777188631::1777188640::1::::<><><>0<>0<>5e132565897899c7f365dc4aee383c8f<>res://.godot/imported/1mancınıktekerlek.png-ac72d0cd2bd80dd7481ed5772d2baa6a.ctex::
 kale1.png::CompressedTexture2D::3641971754640295395::1777188631::1777188640::1::::<><><>0<>0<>1ff4def6ab5d025270081dc3d8d0b096<>res://.godot/imported/kale1.png-3986c0dc04bb0b96ab8601a2a60874ca.ctex::
@@ -57,10 +59,10 @@ main_menu.tscn::PackedScene::8783574626401376144::1777192164::0::1::::<><><>0<>0
 SelectionMenu.tscn::PackedScene::7439718186026722976::1777191802::0::1::::<><><>0<>0<><>::uid://b7kjpyjq2f616::::res://main_menu/selection_menu.gd
 selection_menu.gd::GDScript::4653681972721131047::1777197507::0::1::::<>Control<><>0<>0<><>::
 selection_menu.tscn::PackedScene::5279567253978427805::1777188631::0::1::::<><><>0<>0<><>::
-::res://main_scene/::1777201013
+::res://main_scene/::1777202469
 Kamera.gd::GDScript::-1::1777188631::0::1::::<>Camera2D<><>0<>0<><>::
-main_scene.tscn::PackedScene::1247876286742651593::1777201013::0::1::::<><><>0<>0<><>::uid://cxy57dfyge6h::::res://main_scene/main_scene.gd<>uid://bpn2tegemekdx::::res://Kale/kale.tscn<>uid://svcsfkrqi473::::res://cannon/cannon.tscn<>uid://bgvmwu17sq84c::::res://Kale/building.gd<>uid://cibi71qpb8k4e::::res://görseller/tema1/kule1.png<>res://main_scene/Kamera.gd<>uid://cv8kcxp0y3vjn::::res://görseller/tema3/sutün.png<>uid://nk7tt17lelh2::::res://görseller/tema3/kalesojn.png<>uid://brshe5a1n3nji::::res://görseller/tema3/kule.png<>uid://gt4ai0ek6b3q::::res://görseller/tema1/1mancınıktekerlek.png<>uid://c8nb52a3ni3ou::::res://görseller/tema3/taş.png
-main_scene.gd::GDScript::189370842904090181::1777198107::0::1::::<>Node2D<><>0<>0<><>::
+main_scene.tscn::PackedScene::1247876286742651593::1777202469::0::1::::<><><>0<>0<><>::uid://cxy57dfyge6h::::res://main_scene/main_scene.gd<>uid://bpn2tegemekdx::::res://Kale/kale.tscn<>uid://svcsfkrqi473::::res://cannon/cannon.tscn<>uid://c02kxyijmvaxg::::res://görseller/arka.png<>uid://bgvmwu17sq84c::::res://Kale/building.gd<>uid://cibi71qpb8k4e::::res://görseller/tema1/kule1.png<>res://main_scene/Kamera.gd<>uid://cv8kcxp0y3vjn::::res://görseller/tema3/sutün.png<>uid://nk7tt17lelh2::::res://görseller/tema3/kalesojn.png<>uid://brshe5a1n3nji::::res://görseller/tema3/kule.png<>uid://gt4ai0ek6b3q::::res://görseller/tema1/1mancınıktekerlek.png<>uid://c8nb52a3ni3ou::::res://görseller/tema3/taş.png
+main_scene.gd::GDScript::189370842904090181::1777202206::0::1::::<>Node2D<><>0<>0<><>::
 ::res://mermi_top_gülle_vs/::1777198720
 bullet.gd::GDScript::7346577061919348033::1777198720::0::1::::<>Area2D<><>0<>0<><>::
 bullet.tscn::PackedScene::7337945209078965683::1777188631::0::1::::<><><>0<>0<><>::uid://dcw0by2capnl6::::res://mermi_top_gülle_vs/bullet.gd<>uid://5s0qbfh7mcn2::::res://icon.svg

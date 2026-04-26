@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dcss5dv68a788"]
+[gd_scene format=3 uid="uid://by4cxka80x0wb"]
 
-[ext_resource type="Script" uid="uid://dcw0by2capnl6" path="res://mermi_top_gülle_vs/bullet.gd" id="1_1gngh"]
-[ext_resource type="Texture2D" uid="uid://cpihonx3aats6" path="res://görseller/tema1/kkale1top.png" id="2_1gngh"]
+[ext_resource type="Script" uid="uid://dcw0by2capnl6" path="res://mermi_top_gülle_vs/bullet.gd" id="1_mqxkh"]
+[ext_resource type="Texture2D" uid="uid://4by4uh42ma2u" path="res://görseller/tema3/top.png" id="2_mqxkh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8x3hc"]
 radius = 26.627054
@@ -9,12 +9,12 @@ radius = 26.627054
 [sub_resource type="Curve" id="Curve_1gngh"]
 
 [node name="Bullet" type="Area2D" unique_id=1692200080]
-script = ExtResource("1_1gngh")
+script = ExtResource("1_mqxkh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=553618154]
 position = Vector2(7.499999, 7.6293945e-06)
 scale = Vector2(0.39843756, 0.44531253)
-texture = ExtResource("2_1gngh")
+texture = ExtResource("2_mqxkh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=24697085]
 position = Vector2(8, -3)

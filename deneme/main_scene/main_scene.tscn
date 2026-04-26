@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxy57dfyge6h" path="res://main_scene/main_scene.gd" id="1_n0j53"]
 [ext_resource type="PackedScene" uid="uid://bpn2tegemekdx" path="res://Kale/kale.tscn" id="1_nutp4"]
+[ext_resource type="Texture2D" uid="uid://cwrp2ietvd8gh" path="res://görseller/WhatsApp Image 2026-04-26 at 14.09.36.jpeg" id="2_0mbvw"]
 [ext_resource type="PackedScene" uid="uid://svcsfkrqi473" path="res://cannon/cannon.tscn" id="2_n0j53"]
 [ext_resource type="Texture2D" uid="uid://c02kxyijmvaxg" path="res://görseller/arka.png" id="2_tmg65"]
 [ext_resource type="Script" uid="uid://bgvmwu17sq84c" path="res://Kale/building.gd" id="3_kenv4"]
@@ -14,10 +15,15 @@
 [ext_resource type="Texture2D" uid="uid://c8nb52a3ni3ou" path="res://görseller/tema3/taş.png" id="11_tmg65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0j53"]
-size = Vector2(1249, 163.5)
+size = Vector2(1656, 1322)
 
 [node name="MainScene" type="Node2D" unique_id=2032655932]
 script = ExtResource("1_n0j53")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=872939382]
+position = Vector2(596.9999, 287.99985)
+scale = Vector2(1.9318705, 1.7840647)
+texture = ExtResource("2_0mbvw")
 
 [node name="arka plan" type="Sprite2D" parent="." unique_id=48750292]
 position = Vector2(594.99994, 314)
@@ -73,11 +79,26 @@ texture = ExtResource("5_bfjm1")
 [node name="zemin" type="StaticBody2D" parent="." unique_id=305522936]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zemin" unique_id=1523507254]
-position = Vector2(624.5, 705.75)
+position = Vector2(594, 1293)
+shape = SubResource("RectangleShape2D_n0j53")
+
+[node name="zemin2" type="StaticBody2D" parent="." unique_id=1970681321]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zemin2" unique_id=456894067]
+position = Vector2(-1067, 169)
+shape = SubResource("RectangleShape2D_n0j53")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="zemin2" unique_id=1406898280]
+position = Vector2(2258, 169)
+shape = SubResource("RectangleShape2D_n0j53")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="zemin2" unique_id=1876378084]
+position = Vector2(587, -817)
 shape = SubResource("RectangleShape2D_n0j53")
 
 [node name="Kamera" type="Camera2D" parent="." unique_id=169079509]
 position = Vector2(575, 326)
+zoom = Vector2(0.3, 0.3)
 script = ExtResource("4_olt6v")
 
 [node name="tekerlekplayer" type="Sprite2D" parent="." unique_id=61120280]
@@ -89,6 +110,9 @@ texture = ExtResource("10_akujk")
 position = Vector2(1112.0001, 425.00003)
 scale = Vector2(-0.2963496, 0.2236552)
 texture = ExtResource("11_tmg65")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=853038303]
+position = Vector2(-4, 5)
 
 [editable path="PlayerOnKule"]
 [editable path="BotKale"]

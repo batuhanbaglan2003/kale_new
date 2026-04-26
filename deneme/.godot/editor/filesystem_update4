@@ -13,3 +13,5 @@ res://Kale/building.gd
 res://global/global.gd
 res://cannon/cannon.tscn
 res://Kale/kale.tscn
+res://mermi_top_gülle_vs/bot_bullet.tscn
+res://mermi_top_gülle_vs/bullet.tscn
