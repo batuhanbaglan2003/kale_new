@@ -3,18 +3,26 @@
 [ext_resource type="Script" uid="uid://cxy57dfyge6h" path="res://main_scene/main_scene.gd" id="1_n0j53"]
 [ext_resource type="PackedScene" uid="uid://bpn2tegemekdx" path="res://Kale/kale.tscn" id="1_nutp4"]
 [ext_resource type="PackedScene" uid="uid://svcsfkrqi473" path="res://cannon/cannon.tscn" id="2_n0j53"]
+[ext_resource type="Texture2D" uid="uid://c02kxyijmvaxg" path="res://görseller/arka.png" id="2_tmg65"]
 [ext_resource type="Script" uid="uid://bgvmwu17sq84c" path="res://Kale/building.gd" id="3_kenv4"]
 [ext_resource type="Texture2D" uid="uid://cibi71qpb8k4e" path="res://görseller/tema1/kule1.png" id="4_7ydga"]
 [ext_resource type="Script" path="res://main_scene/Kamera.gd" id="4_olt6v"]
 [ext_resource type="Texture2D" uid="uid://cv8kcxp0y3vjn" path="res://görseller/tema3/sutün.png" id="5_bfjm1"]
 [ext_resource type="Texture2D" uid="uid://nk7tt17lelh2" path="res://görseller/tema3/kalesojn.png" id="5_ot76g"]
 [ext_resource type="Texture2D" uid="uid://brshe5a1n3nji" path="res://görseller/tema3/kule.png" id="6_rdxdk"]
+[ext_resource type="Texture2D" uid="uid://gt4ai0ek6b3q" path="res://görseller/tema1/1mancınıktekerlek.png" id="10_akujk"]
+[ext_resource type="Texture2D" uid="uid://c8nb52a3ni3ou" path="res://görseller/tema3/taş.png" id="11_tmg65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0j53"]
 size = Vector2(1249, 163.5)
 
 [node name="MainScene" type="Node2D" unique_id=2032655932]
 script = ExtResource("1_n0j53")
+
+[node name="arka plan" type="Sprite2D" parent="." unique_id=48750292]
+position = Vector2(594.99994, 314)
+scale = Vector2(2.2622514, 2.2622514)
+texture = ExtResource("2_tmg65")
 
 [node name="PlayerKale" parent="." unique_id=1762882717 instance=ExtResource("1_nutp4")]
 position = Vector2(526, 648)
@@ -29,9 +37,6 @@ script = ExtResource("3_kenv4")
 position = Vector2(-296.0142, -118.34126)
 scale = Vector2(0.15784903, 0.073582865)
 texture = ExtResource("4_7ydga")
-
-[node name="Sprite2D" parent="PlayerOnKule/BottomPart" parent_id_path=PackedInt32Array(1778748839, 671107349) index="0" unique_id=1419648457]
-texture = null
 
 [node name="BotKale" parent="." unique_id=632495063 instance=ExtResource("1_nutp4")]
 position = Vector2(1275, 645)
@@ -62,7 +67,7 @@ scale = Vector2(0.36151353, 0.36151353)
 
 [node name="Sprite2D" parent="BotCannon" index="1" unique_id=1542740542]
 rotation = 2.3792872
-scale = Vector2(0.3273706, 0.3273706)
+scale = Vector2(0.39562944, 0.39562944)
 texture = ExtResource("5_bfjm1")
 
 [node name="zemin" type="StaticBody2D" parent="." unique_id=305522936]
@@ -74,6 +79,16 @@ shape = SubResource("RectangleShape2D_n0j53")
 [node name="Kamera" type="Camera2D" parent="." unique_id=169079509]
 position = Vector2(575, 326)
 script = ExtResource("4_olt6v")
+
+[node name="tekerlekplayer" type="Sprite2D" parent="." unique_id=61120280]
+position = Vector2(16, 619)
+scale = Vector2(-0.04095796, -0.04095796)
+texture = ExtResource("10_akujk")
+
+[node name="tekerlekbot" type="Sprite2D" parent="." unique_id=587065388]
+position = Vector2(1112.0001, 425.00003)
+scale = Vector2(-0.2963496, 0.2236552)
+texture = ExtResource("11_tmg65")
 
 [editable path="PlayerOnKule"]
 [editable path="BotKale"]
