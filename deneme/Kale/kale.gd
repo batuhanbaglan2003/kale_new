@@ -4,7 +4,7 @@ extends Node2D
 @export var parca_orta: Sprite2D   # 2. Resim (Gövde)
 @export var parca_alt: Sprite2D    # 3. Resim (Temel)
 
-var can = 3
+var can = 4
 
 func take_damage(_amount):
 	if can == 3:

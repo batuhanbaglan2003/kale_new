@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpn2tegemekdx"]
 
 [ext_resource type="Script" uid="uid://dyeq1p88rvtdt" path="res://Kale/kale.gd" id="1_guedo"]
-[ext_resource type="Texture2D" uid="uid://cvav7g4ox8d10" path="res://Kale/images.jpg" id="2_b1vsw"]
+[ext_resource type="Texture2D" uid="uid://br5g0itdagb5t" path="res://görseller/tema1/kale1.png" id="2_2lkki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vj1wg"]
 size = Vector2(101, 95)
@@ -19,8 +19,8 @@ script = ExtResource("1_guedo")
 
 [node name="Sprite2D" type="Sprite2D" parent="TopPart" unique_id=1565901108]
 position = Vector2(-316.00003, -82)
-scale = Vector2(0.48666668, 0.45999998)
-texture = ExtResource("2_b1vsw")
+scale = Vector2(0.07249799, 0.06852549)
+texture = ExtResource("2_2lkki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopPart" unique_id=520547410]
 position = Vector2(-315.5, -82.5)
@@ -31,7 +31,6 @@ shape = SubResource("RectangleShape2D_vj1wg")
 [node name="Sprite2D" type="Sprite2D" parent="MidPart" unique_id=1921315247]
 position = Vector2(-312, -94.00001)
 scale = Vector2(0.6244444, 0.6155556)
-texture = ExtResource("2_b1vsw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MidPart" unique_id=2140397231]
 position = Vector2(-312.25, -93.5)
@@ -42,7 +41,6 @@ shape = SubResource("RectangleShape2D_qxoy0")
 [node name="Sprite2D" type="Sprite2D" parent="BottomPart" unique_id=1419648457]
 position = Vector2(-309.9375, -108.87501)
 scale = Vector2(0.7016668, 0.7655555)
-texture = ExtResource("2_b1vsw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPart" unique_id=11744663]
 position = Vector2(-312, -108)

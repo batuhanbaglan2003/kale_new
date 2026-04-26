@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bi4t0w158vgdt" path="res://cannon/cannon.gd" id="1_x665q"]
 [ext_resource type="Script" uid="uid://dcw0by2capnl6" path="res://mermi_top_gülle_vs/bullet.gd" id="2_dt7f4"]
 [ext_resource type="Texture2D" uid="uid://5s0qbfh7mcn2" path="res://icon.svg" id="2_fgaqi"]
+[ext_resource type="Texture2D" uid="uid://b0run4tnjy3ba" path="res://görseller/tema1/kalebirmancınık.png" id="4_dt7f4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8x3hc"]
 radius = 26.627054
@@ -32,10 +33,14 @@ position = Vector2(54, -45)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1542740542]
 position = Vector2(-2, 1)
-texture = ExtResource("2_fgaqi")
+rotation = 0.4150176
+scale = Vector2(0.1025539, 0.1025539)
+texture = ExtResource("4_dt7f4")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1611830874]
-offset_left = 128.0
-offset_top = -143.0
-offset_right = 146.0
-offset_bottom = 8.0
+offset_left = 101.0
+offset_top = -38.0
+offset_right = 119.0
+offset_bottom = 113.0
+scale = Vector2(26.212332, 0.26740313)
+show_percentage = false

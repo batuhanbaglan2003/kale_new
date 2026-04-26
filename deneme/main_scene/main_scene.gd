@@ -9,17 +9,14 @@ extends Node2D
 @onready var result_label = $UI/ResultLabel
 @onready var kamera = $Kamera
 
-var tema_isimleri = ["tema1", "tema2", "tema3"]
 var sira = "PLAYER" 
 var oyun_bitti = false
 var bot_hedef_ismi = ""
 var bot_hata_carpan = 1.0
 
 func _ready():
-	# 1. Önce temaları yükle
-	_temalari_yukle()
+	# Resimleri artık editörden koyduğun için _temalari_yukle fonksiyonunu kaldırdık.
 	
-	# 2. Başlangıç ayarları
 	player_cannon.is_active = false 
 	bot_cannon.side = "Right"
 	if result_label != null: result_label.hide()
@@ -27,16 +24,17 @@ func _ready():
 	if kamera != null:
 		kamera.target_node = null 
 	
-	# 3. Kısa bir bekleme ve başla
+	# Başlangıçta 3 saniye bekle
 	await get_tree().create_timer(3.0).timeout
 	
+	# Kamera oyuncuya odaklansın ve kontrol açılsın
 	if kamera != null: kamera.odaklan(player_cannon)
 	player_cannon.is_active = true
 
 func _process(_delta):
 	if oyun_bitti: return
 
-	# Kazanma/Kaybetme Kontrolü
+	# 1. Kazanma/Kaybetme Kontrolü
 	var bot_tamamen_yikildi = !is_instance_valid(bot_kale) and !is_instance_valid(bot_on_kule)
 	if bot_tamamen_yikildi:
 		oyunu_sonlandir("KAZANDINIZ!")
@@ -47,7 +45,7 @@ func _process(_delta):
 		oyunu_sonlandir("KAYBETTİNİZ...")
 		return
 
-	# Sıra Yönetimi
+	# 2. Sıra Yönetimi
 	var mermiler = get_tree().get_nodes_in_group("mermiler")
 	var mermi_sayisi = mermiler.size()
 	
@@ -70,6 +68,7 @@ func _process(_delta):
 				if kamera != null: kamera.odaklan(player_cannon)
 				player_cannon.is_active = true
 
+# Botun Akıllı Ateş Etme Mantığı
 func bot_hamlesi():
 	if oyun_bitti: return
 	await get_tree().create_timer(1.5).timeout 
@@ -87,8 +86,7 @@ func bot_hamlesi():
 	var gerekli_hiz = sqrt((mesafe_x * 600.0) / 0.866)
 	var mukemmel_guc = gerekli_hiz / 10.0
 	
-	var bot_gucu = mukemmel_guc + (randf_range(-8.0, 8.0) * bot_hata_carpan)
-	bot_gucu = clamp(bot_gucu, 0.0, 100.0)
+	var bot_gucu = clamp(mukemmel_guc + (randf_range(-8.0, 8.0) * bot_hata_carpan), 0.0, 100.0)
 	bot_hata_carpan = max(0.1, bot_hata_carpan - 0.3)
 	
 	bot_cannon.bot_fire(deg_to_rad(-120), bot_gucu)
@@ -100,34 +98,3 @@ func oyunu_sonlandir(mesaj):
 		result_label.show()
 	player_cannon.is_active = false
 	bot_cannon.is_active = false
-
-# --- TEMA YÜKLEME SİSTEMİ ---
-func _temalari_yukle():
-	var p_data = Global.temalar[Global.oyuncu_temasi]
-	var b_data = Global.temalar[Global.bot_temasi]
-	
-	# OYUNCU KALESİ
-	if is_instance_valid(player_kale):
-		player_kale.parca_ust = _resim_yukle(p_data["kale"][0])
-		player_kale.parca_orta = _resim_yukle(p_data["kale"][1])
-		player_kale.parca_alt = _resim_yukle(p_data["kale"][2])
-	
-	# BOT KALESİ
-	if is_instance_valid(bot_kale):
-		bot_kale.parca_ust = _resim_yukle(b_data["kale"][0])
-		bot_kale.parca_orta = _resim_yukle(b_data["kale"][1])
-		bot_kale.parca_alt = _resim_yukle(b_data["kale"][2])
-	
-	# Kule ve Toplar
-	if player_on_kule: player_on_kule.texture = _resim_yukle(p_data["kule"][0])
-	if player_cannon: player_cannon.texture = _resim_yukle(p_data["top"])
-	if bot_on_kule: bot_on_kule.texture = _resim_yukle(b_data["kule"][0])
-	if bot_cannon: bot_cannon.texture = _resim_yukle(b_data["top"])
-
-# YARDIMCI FONKSİYON: Dosya yoksa oyunu çökertmez, hangi dosya eksikse söyler.
-func _resim_yukle(yol: String):
-	if FileAccess.file_exists(yol):
-		return load(yol)
-	else:
-		print("!!! HATA: Dosya bulunamadı -> ", yol)
-		return null # Veya buraya varsayılan bir 'error.png' koyabilirsin
