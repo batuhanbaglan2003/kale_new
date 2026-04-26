@@ -20,8 +20,7 @@ offset_top = 57.0
 offset_right = 165.0
 offset_bottom = 93.67392
 rotation = -0.01707983
-text = "exist
-"
+text = "quit"
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="exist" to="." method="_on_exist_pressed"]

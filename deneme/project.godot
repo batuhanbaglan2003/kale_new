@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="deneme"
-run/main_scene="uid://r1qltgke4jq4"
+run/main_scene="uid://dxe3gqthunxg7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*uid://be85l11jubvjv"
+GameManager="*uid://dq48o20la0c8m"
 
 [physics]
 

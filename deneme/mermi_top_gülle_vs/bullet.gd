@@ -27,7 +27,7 @@ func hasar_ver(hedef):
 	if atici_taraf == "Right" and ("Bot" in asil_hedef.name): return
 	
 	if asil_hedef.has_method("take_damage"):
-		asil_hedef.take_damage(25)
+		asil_hedef.take_damage(1)
 		
 	# KAMERA SARSINTISI: Sahnedeki Kamerayı bul ve sars!
 	var kamera = get_tree().current_scene.get_node_or_null("Kamera")

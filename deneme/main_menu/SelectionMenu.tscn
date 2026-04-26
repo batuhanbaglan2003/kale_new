@@ -25,10 +25,11 @@ text = " tema 1
 
 [node name="Button2" type="Button" parent="." unique_id=1728469420]
 layout_mode = 0
-offset_left = 504.0
-offset_top = 121.0
-offset_right = 700.0
-offset_bottom = 201.0
+offset_left = 495.0
+offset_top = 112.0
+offset_right = 691.0
+offset_bottom = 192.0
+scale = Vector2(1.1589468, 1.1589468)
 text = "tema 2"
 
 [node name="Button3" type="Button" parent="." unique_id=195029608]
