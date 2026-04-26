@@ -1,26 +1,59 @@
 [gd_scene format=3 uid="uid://dxe3gqthunxg7"]
 
 [ext_resource type="Script" uid="uid://ds1q24s1y4mjc" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="Texture2D" uid="uid://c02kxyijmvaxg" path="res://görseller/arka.png" id="2_bws42"]
+[ext_resource type="Texture2D" uid="uid://ubxiratnk17t" path="res://görseller/pplay.png" id="3_3f7m4"]
+[ext_resource type="Texture2D" uid="uid://vvnovglolnqp" path="res://görseller/qit.png" id="4_6tl50"]
+[ext_resource type="Texture2D" uid="uid://br5g0itdagb5t" path="res://görseller/tema1/kale1.png" id="5_6tl50"]
+[ext_resource type="Texture2D" uid="uid://nk7tt17lelh2" path="res://görseller/tema3/kalesojn.png" id="6_t6bnd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6tl50"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6bnd"]
 
 [node name="MainMenu" type="Node2D" unique_id=954328014]
 position = Vector2(118, 57)
 script = ExtResource("1_oa53l")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1913458717]
+position = Vector2(481, 542)
+scale = Vector2(2.6347153, 6.511563)
+texture = ExtResource("2_bws42")
+
 [node name="play" type="Button" parent="." unique_id=726795552]
-offset_left = 122.0
-offset_top = 6.0
-offset_right = 163.0
-offset_bottom = 37.0
-text = "play
+offset_left = 144.99998
+offset_top = 77.0
+offset_right = 1102.0
+offset_bottom = 557.0
+scale = Vector2(0.2875774, 0.40712845)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6tl50")
+text = "
+
 "
+icon = ExtResource("3_3f7m4")
 
 [node name="exist" type="Button" parent="." unique_id=942258331]
-offset_left = 120.0
-offset_top = 57.0
-offset_right = 165.0
-offset_bottom = 93.67392
-rotation = -0.01707983
+offset_left = 480.99997
+offset_top = 82.0
+offset_right = 1469.0
+offset_bottom = 562.0
+rotation = 0.0027091992
+scale = Vector2(0.28645098, 0.39366078)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t6bnd")
 text = "quit"
+icon = ExtResource("4_6tl50")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=276620770]
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=715809897]
+position = Vector2(106, 418)
+scale = Vector2(0.16474988, 0.16474988)
+texture = ExtResource("5_6tl50")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=319758643]
+position = Vector2(838.99994, 209.99998)
+scale = Vector2(0.49202716, 0.49202716)
+texture = ExtResource("6_t6bnd")
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="exist" to="." method="_on_exist_pressed"]

@@ -11,8 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://cv8kcxp0y3vjn" path="res://görseller/tema3/sutün.png" id="5_bfjm1"]
 [ext_resource type="Texture2D" uid="uid://nk7tt17lelh2" path="res://görseller/tema3/kalesojn.png" id="5_ot76g"]
 [ext_resource type="Texture2D" uid="uid://brshe5a1n3nji" path="res://görseller/tema3/kule.png" id="6_rdxdk"]
+[ext_resource type="PackedScene" uid="uid://dcss5dv68a788" path="res://mermi_top_gülle_vs/bullet.tscn" id="10_23aln"]
 [ext_resource type="Texture2D" uid="uid://gt4ai0ek6b3q" path="res://görseller/tema1/1mancınıktekerlek.png" id="10_akujk"]
 [ext_resource type="Texture2D" uid="uid://c8nb52a3ni3ou" path="res://görseller/tema3/taş.png" id="11_tmg65"]
+[ext_resource type="PackedScene" uid="uid://by4cxka80x0wb" path="res://mermi_top_gülle_vs/bot_bullet.tscn" id="11_xymuv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0j53"]
 size = Vector2(1656, 1322)
@@ -65,11 +67,13 @@ texture = ExtResource("6_rdxdk")
 [node name="PlayerCannon" parent="." unique_id=800458036 instance=ExtResource("2_n0j53")]
 position = Vector2(45.999996, 598)
 scale = Vector2(0.34208995, 0.34208995)
+projectile_scene = ExtResource("10_23aln")
 
 [node name="BotCannon" parent="." unique_id=247583271 instance=ExtResource("2_n0j53")]
 position = Vector2(1115, 597.99994)
 rotation = -0.0083191395
 scale = Vector2(0.36151353, 0.36151353)
+projectile_scene = ExtResource("11_xymuv")
 
 [node name="Sprite2D" parent="BotCannon" index="1" unique_id=1542740542]
 rotation = 2.3792872
@@ -113,6 +117,16 @@ texture = ExtResource("11_tmg65")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=853038303]
 position = Vector2(-4, 5)
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=1319727839]
+
+[node name="ResultLabel" type="Label" parent="ui" unique_id=1069484785]
+visible = false
+offset_left = 641.0
+offset_top = 123.0
+offset_right = 728.0
+offset_bottom = 152.0
+text = "Game Over"
 
 [editable path="PlayerOnKule"]
 [editable path="BotKale"]
