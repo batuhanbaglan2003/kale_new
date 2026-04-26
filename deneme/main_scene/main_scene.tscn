@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cxy57dfyge6h" path="res://main_scene/main_scene.gd" id="1_n0j53"]
 [ext_resource type="PackedScene" uid="uid://bpn2tegemekdx" path="res://Kale/kale.tscn" id="1_nutp4"]
 [ext_resource type="PackedScene" uid="uid://svcsfkrqi473" path="res://cannon/cannon.tscn" id="2_n0j53"]
+[ext_resource type="Script" uid="uid://bgvmwu17sq84c" path="res://Kale/building.gd" id="3_kenv4"]
 [ext_resource type="Script" uid="uid://clsgjfcgoivk0" path="res://main_scene/Kamera.gd" id="4_olt6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0j53"]
@@ -13,10 +14,12 @@ script = ExtResource("1_n0j53")
 
 [node name="PlayerKale" parent="." unique_id=1762882717 instance=ExtResource("1_nutp4")]
 position = Vector2(524, 648)
+script = ExtResource("3_kenv4")
 
 [node name="PlayerOnKule" parent="." unique_id=1778748839 instance=ExtResource("1_nutp4")]
 position = Vector2(500, 640)
 scale = Vector2(0.25674447, 0.7182618)
+script = ExtResource("3_kenv4")
 
 [node name="BotKale" parent="." unique_id=632495063 instance=ExtResource("1_nutp4")]
 position = Vector2(1275, 645)
@@ -24,6 +27,7 @@ position = Vector2(1275, 645)
 [node name="BotOnKule" parent="." unique_id=1246019218 instance=ExtResource("1_nutp4")]
 position = Vector2(830, 637)
 scale = Vector2(0.25006497, 0.71480167)
+script = ExtResource("3_kenv4")
 
 [node name="PlayerCannon" parent="." unique_id=800458036 instance=ExtResource("2_n0j53")]
 position = Vector2(45.999996, 598)

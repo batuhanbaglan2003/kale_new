@@ -15,24 +15,33 @@ var bot_hedef_ismi = ""
 var bot_hata_carpan = 1.0
 
 func _ready():
-	player_cannon.is_active = false # Girişte ateş edemesin
+	player_cannon.is_active = false 
 	bot_cannon.side = "Right"
 	if result_label != null: result_label.hide()
 	
-	# 🎬 GİRİŞ SİNEMATİĞİ (3 Saniye)
 	if kamera != null:
-		kamera.target_node = null # Kamerayı serbest bırak (Geniş plan)
+		kamera.target_node = null 
 	
 	await get_tree().create_timer(3.0).timeout
 	
-	# Giriş bitti, oyuncuya geç
 	if kamera != null: kamera.odaklan(player_cannon)
 	player_cannon.is_active = true
 
 func _process(_delta):
 	if oyun_bitti: return
-	if not is_instance_valid(bot_kale): oyunu_sonlandir("KAZANDINIZ!"); return
-	if not is_instance_valid(player_kale): oyunu_sonlandir("KAYBETTİNİZ..."); return
+
+	# 🏁 YENİ OYUN BİTİŞ KURALI:
+	# Botun hem kalesi HEM kulesi yok olduysa oyuncu kazanır
+	var bot_tamamen_yikildi = !is_instance_valid(bot_kale) and !is_instance_valid(bot_on_kule)
+	if bot_tamamen_yikildi:
+		oyunu_sonlandir("KAZANDINIZ!")
+		return
+
+	# Oyuncunun hem kalesi HEM kulesi yok olduysa bot kazanır
+	var player_tamamen_yikildi = !is_instance_valid(player_kale) and !is_instance_valid(player_on_kule)
+	if player_tamamen_yikildi:
+		oyunu_sonlandir("KAYBETTİNİZ...")
+		return
 
 	var mermiler = get_tree().get_nodes_in_group("mermiler")
 	var mermi_sayisi = mermiler.size()
@@ -51,7 +60,6 @@ func _process(_delta):
 			if mermi_sayisi > 0: sira = "WAIT_PLAYER"
 		"WAIT_PLAYER":
 			if mermi_sayisi == 0:
-				# 🎥 Atış sonrası 1 saniye bekleme
 				await get_tree().create_timer(1.0).timeout
 				sira = "PLAYER"
 				if kamera != null: kamera.odaklan(player_cannon)
@@ -59,10 +67,9 @@ func _process(_delta):
 
 func bot_hamlesi():
 	if oyun_bitti: return
-	
-	# 🤖 BOT ATIŞ ÖNCESİ BEKLEME (1.5 Saniye)
 	await get_tree().create_timer(1.5).timeout 
 	
+	# Bot önce kuleye, kule yoksa kaleye ateş eder
 	var hedef = null
 	if is_instance_valid(player_on_kule): hedef = player_on_kule
 	elif is_instance_valid(player_kale): hedef = player_kale
