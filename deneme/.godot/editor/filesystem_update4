@@ -10,3 +10,4 @@ res://main_menu/main_menu.gd
 res://main_menu/SelectionMenu.tscn
 res://main_menu/selection_menu.gd
 res://Kale/building.gd
+res://global/global.gd

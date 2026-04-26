@@ -9,12 +9,17 @@ extends Node2D
 @onready var result_label = $UI/ResultLabel
 @onready var kamera = $Kamera
 
+var tema_isimleri = ["tema1", "tema2", "tema3"]
 var sira = "PLAYER" 
 var oyun_bitti = false
 var bot_hedef_ismi = ""
 var bot_hata_carpan = 1.0
 
 func _ready():
+	# 1. Önce temaları yükle
+	_temalari_yukle()
+	
+	# 2. Başlangıç ayarları
 	player_cannon.is_active = false 
 	bot_cannon.side = "Right"
 	if result_label != null: result_label.hide()
@@ -22,6 +27,7 @@ func _ready():
 	if kamera != null:
 		kamera.target_node = null 
 	
+	# 3. Kısa bir bekleme ve başla
 	await get_tree().create_timer(3.0).timeout
 	
 	if kamera != null: kamera.odaklan(player_cannon)
@@ -30,19 +36,18 @@ func _ready():
 func _process(_delta):
 	if oyun_bitti: return
 
-	# 🏁 YENİ OYUN BİTİŞ KURALI:
-	# Botun hem kalesi HEM kulesi yok olduysa oyuncu kazanır
+	# Kazanma/Kaybetme Kontrolü
 	var bot_tamamen_yikildi = !is_instance_valid(bot_kale) and !is_instance_valid(bot_on_kule)
 	if bot_tamamen_yikildi:
 		oyunu_sonlandir("KAZANDINIZ!")
 		return
 
-	# Oyuncunun hem kalesi HEM kulesi yok olduysa bot kazanır
 	var player_tamamen_yikildi = !is_instance_valid(player_kale) and !is_instance_valid(player_on_kule)
 	if player_tamamen_yikildi:
 		oyunu_sonlandir("KAYBETTİNİZ...")
 		return
 
+	# Sıra Yönetimi
 	var mermiler = get_tree().get_nodes_in_group("mermiler")
 	var mermi_sayisi = mermiler.size()
 	
@@ -69,7 +74,6 @@ func bot_hamlesi():
 	if oyun_bitti: return
 	await get_tree().create_timer(1.5).timeout 
 	
-	# Bot önce kuleye, kule yoksa kaleye ateş eder
 	var hedef = null
 	if is_instance_valid(player_on_kule): hedef = player_on_kule
 	elif is_instance_valid(player_kale): hedef = player_kale
@@ -96,3 +100,34 @@ func oyunu_sonlandir(mesaj):
 		result_label.show()
 	player_cannon.is_active = false
 	bot_cannon.is_active = false
+
+# --- TEMA YÜKLEME SİSTEMİ ---
+func _temalari_yukle():
+	var p_data = Global.temalar[Global.oyuncu_temasi]
+	var b_data = Global.temalar[Global.bot_temasi]
+	
+	# OYUNCU KALESİ
+	if is_instance_valid(player_kale):
+		player_kale.parca_ust = _resim_yukle(p_data["kale"][0])
+		player_kale.parca_orta = _resim_yukle(p_data["kale"][1])
+		player_kale.parca_alt = _resim_yukle(p_data["kale"][2])
+	
+	# BOT KALESİ
+	if is_instance_valid(bot_kale):
+		bot_kale.parca_ust = _resim_yukle(b_data["kale"][0])
+		bot_kale.parca_orta = _resim_yukle(b_data["kale"][1])
+		bot_kale.parca_alt = _resim_yukle(b_data["kale"][2])
+	
+	# Kule ve Toplar
+	if player_on_kule: player_on_kule.texture = _resim_yukle(p_data["kule"][0])
+	if player_cannon: player_cannon.texture = _resim_yukle(p_data["top"])
+	if bot_on_kule: bot_on_kule.texture = _resim_yukle(b_data["kule"][0])
+	if bot_cannon: bot_cannon.texture = _resim_yukle(b_data["top"])
+
+# YARDIMCI FONKSİYON: Dosya yoksa oyunu çökertmez, hangi dosya eksikse söyler.
+func _resim_yukle(yol: String):
+	if FileAccess.file_exists(yol):
+		return load(yol)
+	else:
+		print("!!! HATA: Dosya bulunamadı -> ", yol)
+		return null # Veya buraya varsayılan bir 'error.png' koyabilirsin
